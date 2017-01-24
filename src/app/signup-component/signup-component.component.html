@@ -2,19 +2,25 @@
 
 <form action="">
 
-  <label for="username">Username</label>
-  <input type="text" (input)="data.username=$event.target.value" id="username" /><br>
+    <label for="firstName">First Name</label>
+    <input type="text" (input)="data.firstName=$event.target.value" id="firstName" /><br>
 
-  <label for="age">Age</label>
-  <input type="text" (input)="data.age=$event.target.value" id="age" /><br>
+    <label for="lastName">Last Name</label>
+    <input type="text" (input)="data.lastName=$event.target.value" id="lastName" /><br>
 
-  <label for="email" >Email</label>
-  <input type="text" (input)="data.email=$event.target.value" id="email" /><br>
+    <label for="age">Age</label>
+    <input type="text" (input)="data.age=$event.target.value" id="age" /><br>
 
-  <label for="pass">Password</label>
-  <input type="text" (input)="data.pass=$event.target.value" id="pass" /><br>
+    <label for="phone">Phone</label>
+    <input type="text" (input)="data.phone=$event.target.value" id="phone" /><br>
 
-  <button (click)="signUp()">Submit</button>
+    <label for="email">Email</label>
+    <input type="text" (input)="data.email=$event.target.value" id="email" /><br>
+
+    <label for="pass">Password</label>
+    <input type="text" (input)="data.pass=$event.target.value" id="pass" /><br>
+
+    <button (click)="signUp()">Submit</button>
 </form>
 
 <a routerLink="/login" routerLinkActive="active">Login</a>

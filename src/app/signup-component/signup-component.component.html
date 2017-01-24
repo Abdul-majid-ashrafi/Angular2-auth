@@ -3,18 +3,18 @@
 <form action="">
 
   <label for="username">Username</label>
-  <input type="text" id="username" /><br>
+  <input type="text" (input)="data.username=$event.target.value" id="username" /><br>
 
   <label for="age">Age</label>
-  <input type="text" id="age" /><br>
+  <input type="text" (input)="data.age=$event.target.value" id="age" /><br>
 
-  <label for="email">Email</label>
-  <input type="text" id="email" /><br>
+  <label for="email" >Email</label>
+  <input type="text" (input)="data.email=$event.target.value" id="email" /><br>
 
   <label for="pass">Password</label>
-  <input type="text" id="pass" /><br/>
+  <input type="text" (input)="data.pass=$event.target.value" id="pass" /><br>
 
-  <button>Submit</button>
+  <button (click)="signUp()">Submit</button>
 </form>
 
 <a routerLink="/login" routerLinkActive="active">Login</a>

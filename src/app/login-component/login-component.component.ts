@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
+import { MainServiceService } from '../main-service.service';
 
 @Component({
     selector: 'app-login-component',
@@ -10,7 +11,7 @@ export class LoginComponentComponent implements OnInit {
     data: any = {
         email: ""
     }
-    constructor(public af: AngularFire) {
+    constructor(public af: AngularFire, private mainService: MainServiceService) {
         this.af.auth.subscribe(auth => console.log("Login", auth));
     }
 

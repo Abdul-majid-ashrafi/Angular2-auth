@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Router, Routes } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 
+import { MainServiceService } from './main-service.service';
 import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { SignupComponentComponent } from './signup-component/signup-component.component';
@@ -39,7 +40,7 @@ const routes: Routes = [
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MainServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

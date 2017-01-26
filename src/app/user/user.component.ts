@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
   constructor(private mainService: MainServiceService,  private fb : FormBuilder, public router: Router) { 
 
        this.myForm = fb.group({
-            'Name': [''],
+            // 'Name': [''],
             'FatherName': [''],
             'Education': [''],
             'Address': [''],

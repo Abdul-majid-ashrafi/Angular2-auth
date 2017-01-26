@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 export const UserType = {
-    Company: "Company",
+    Compony: "Compony",
     Student: "Student"
 }
 

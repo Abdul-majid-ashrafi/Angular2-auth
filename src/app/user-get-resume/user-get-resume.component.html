@@ -1,4 +1,4 @@
-<h1>
+<!--<h1>
   Your resume updated :)
 </h1>
 <p>Address: {{ (userData | async )?.Address}}</p>
@@ -6,10 +6,47 @@
 <p>Date of birth: {{ (userData | async )?.DOB}}</p>
 <p>Education: {{ (userData | async )?.Education}}</p>
 <p>FatherName: {{ (userData | async )?.FatherName}}</p>
-<p>Name: {{ (userData | async )?.Name}}</p>
-<p>Phone: {{ (userData | async )?.Phone}}</p>
+<p>Phone: {{ (userData | async )?.Phone}}</p>-->
 
 
+
+
+
+<div class="container">
+    <div class="page-header">
+        <h1>Your resume updated :)</h1>
+    </div>
+</div>
+<div class="container">
+    <table class="table table-bordered" style="width:600px;background:#fdf9ef">
+        <tbody>
+            <tr>
+                <td>Address</td>
+                <td>{{ (userData | async )?.Address}}</td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td>{{ (userData | async )?.Age}}</td>
+            </tr>
+            <tr>
+                <td>Date of birth</td>
+                <td>{{ (userData | async )?.DOB}}</td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>{{ (userData | async )?.Education}}</td>
+            </tr>
+            <tr>
+                <td>Father Name</td>
+                <td>{{ (userData | async )?.FatherName}}</td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>{{ (userData | async )?.Phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 <h4>
-<a routerLink="/home" routerLinkActive="active">Back home</a>
+    <a routerLink="/home" routerLinkActive="active">Back home</a>
 </h4>

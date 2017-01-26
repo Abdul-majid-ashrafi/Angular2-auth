@@ -1,12 +1,9 @@
-<h2>
+<!--<h2>
     Update resume!
 </h2>
 
 
 <form action="" [formGroup]="myForm">
-
-    <label for="name">Name</label>
-    <input type="text" placeholder="Name" [formControl]="myForm.controls['Name']" id="name" /><br>
 
     <label for="fatherName">Father Name</label>
     <input type="text" placeholder="Father Name" [formControl]="myForm.controls['FatherName']" id="fatherName" /><br>
@@ -30,3 +27,46 @@
 
     <button (click)="submited(myForm.value)">Submit</button>
 </form>
+-->
+
+
+<div class="container">
+    <div class="page-header">
+        <h1>Update resume</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="col-sm-6 col-md-4">
+        <form action="" id="loginForm" [formGroup]="myForm">
+            <div class="form-group input-group">
+                <span class="input-group-addon"></span>
+                <input class="form-control" type="text" name='FatherName' [formControl]="myForm.controls['FatherName']" placeholder="Father Name" />
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"> </span>
+                <input class="form-control" type="text"  [formControl]="myForm.controls['Education']" name='Education' placeholder="Education" />
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"> </span>
+                <input class="form-control" type="text"  [formControl]="myForm.controls['Address']" name='Address' placeholder="Address" />
+            </div>
+
+            <div class="form-group input-group">
+                <span class="input-group-addon"></span>
+                <input class="form-control" type="number" name='Age' [formControl]="myForm.controls['Age']" placeholder="Age" />
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"> </span>
+                <input class="form-control" type="date"  [formControl]="myForm.controls['DOB']" name='DOB' placeholder="Date of birth" />
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"> </span>
+                <input class="form-control" type="number"  [formControl]="myForm.controls['Phone']" name='Phone' placeholder="Phone" />
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-info btn-block" (click)="submited(myForm.value)">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>

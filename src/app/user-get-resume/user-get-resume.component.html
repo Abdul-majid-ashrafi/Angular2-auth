@@ -1,17 +1,15 @@
 <h1>
   Your resume updated :)
 </h1>
-<h1>{{ (userData | async )?.Address}}</h1>
-<p>{{ (userData | async )?.Address}}</p>
-<p>{{ (userData | async )?.Age}}</p>
-<p>{{ (userData | async )?.DOB}}</p>
-<p>{{ (userData | async )?.Education}}</p>
-<p>{{ (userData | async )?.FatherName}}</p>
-<p>{{ (userData | async )?.Name}}</p>
-<p>{{ (userData | async )?.Phone}}</p>
+<p>Address: {{ (userData | async )?.Address}}</p>
+<p>Age: {{ (userData | async )?.Age}}</p>
+<p>Date of birth: {{ (userData | async )?.DOB}}</p>
+<p>Education: {{ (userData | async )?.Education}}</p>
+<p>FatherName: {{ (userData | async )?.FatherName}}</p>
+<p>Name: {{ (userData | async )?.Name}}</p>
+<p>Phone: {{ (userData | async )?.Phone}}</p>
 
-<br>
-<br>
+
 <h4>
 <a routerLink="/home" routerLinkActive="active">Back home</a>
 </h4>

@@ -15,6 +15,7 @@ import { UserGetResumeComponent } from './user-get-resume/user-get-resume.compon
 import { JobPostComponent } from './job-post/job-post.component';
 import { JobPostGetComponent } from './job-post-get/job-post-get.component';
 import { GetAllUsersComponent } from './get-all-users/get-all-users.component';
+import { GetAllCompaneisComponent } from './get-all-companeis/get-all-companeis.component';
 
 
 // Must export the config for firebase
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'company/job', component: JobPostComponent },
   { path: 'get/job', component: JobPostGetComponent },
   { path: 'all_Users', component: GetAllUsersComponent },
+  { path: 'all/companeis', component: GetAllCompaneisComponent },
   { path: '**', component: LoginComponentComponent } // for redirect
 ];
 
@@ -49,7 +51,8 @@ const routes: Routes = [
     UserGetResumeComponent,
     JobPostComponent,
     JobPostGetComponent,
-    GetAllUsersComponent
+    GetAllUsersComponent,
+    GetAllCompaneisComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

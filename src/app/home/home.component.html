@@ -2,14 +2,12 @@
 <h5>{{obj.mail}}</h5>
 <button (click)="logOut()">logOut</button>
 <br/>
-<ul>
-    <!--<li *ngFor="let item of (items | async)?.Email">{{item  | async}}</li>-->
-</ul>
-<!--{{UserType.Company}}-->
 <div *ngIf="obj.type === 'Student'" >
 <a routerLink="/add/resume" routerLinkActive="active">User add data</a>
 <br/>
 <a routerLink="/get/resume" routerLinkActive="active">User Get Resume</a>
+<br/>
+<a routerLink="/get/job" routerLinkActive="active">Show Job</a>
 </div>
 
 <div *ngIf="obj.type === 'Compony'" >
@@ -18,4 +16,12 @@
 <a routerLink="/get/job" routerLinkActive="active">Show Job</a>
 <br/>
 <a routerLink="/all_Users" routerLinkActive="active">Show all students</a>
+</div>
+
+<div *ngIf="obj.type === 'Admin'" >
+<a routerLink="/all/companeis" routerLinkActive="active"> Show Componies</a>
+<br/>
+<a routerLink="/get/job" routerLinkActive="active">Show Jobs</a>
+<br/>
+<a routerLink="/all_Users" routerLinkActive="active">Show students</a>
 </div>

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 import { MainServiceService } from '../main-service.service';
 import { Router } from '@angular/router';
-// import { Rx } from 'rxjs';
-var Rx = require('rxjs')
+
 @Component({
     selector: 'app-login-component',
     templateUrl: './login-component.component.html',
@@ -18,6 +17,9 @@ export class LoginComponentComponent implements OnInit {
     }
 
     ngOnInit() {
+        if(localStorage.getItem("key")){
+                this.router.navigate(['/home']);
+        }
     }
     
     login() {

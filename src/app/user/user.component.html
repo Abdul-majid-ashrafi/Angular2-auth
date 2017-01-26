@@ -1,0 +1,32 @@
+<p>
+    user works!
+</p>
+
+
+<form action="" [formGroup]="myForm">
+
+    <label for="name">Name</label>
+    <input type="text" placeholder="Name" [formControl]="myForm.controls['Name']" id="name" /><br>
+
+    <label for="fatherName">Father Name</label>
+    <input type="text" placeholder="Father Name" [formControl]="myForm.controls['FatherName']" id="fatherName" /><br>
+
+    <label for="education">Education</label>
+    <input type="text" placeholder="Education" type="text" [formControl]="myForm.controls['Education']" id="education" /><br>
+
+    <label for="address">Address</label>
+    <input placeholder="Address" type="text" [formControl]="myForm.controls['Address']" id="address" /><br>
+
+    <label for="age">Age</label>
+    <input placeholder="Age" type="number" [formControl]="myForm.controls['Age']" id="age" /><br>
+
+    <label for="dob">DOB</label>
+    <input placeholder="Date of birth" type="date" [formControl]="myForm.controls['DOB']" id="dob" /><br>
+
+    <label for="phone">Phone</label>
+    <input placeholder="Phone" type="number" [formControl]="myForm.controls['Phone']" id="phone" /><br>
+
+
+
+    <button (click)="submited(myForm.value)">Submit</button>
+</form>

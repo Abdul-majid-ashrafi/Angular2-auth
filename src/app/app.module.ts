@@ -10,15 +10,17 @@ import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { SignupComponentComponent } from './signup-component/signup-component.component';
 import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
+import { UserGetResumeComponent } from './user-get-resume/user-get-resume.component';
 
 
 // Must export the config for firebase
 export const firebaseConfig = {
-  apiKey: "AIzaSyArEv-G1I3BR9z7K4Sjpjmr92Z8Ge2REB4",
-  authDomain: "facebooklogen.firebaseapp.com",
-  databaseURL: "https://facebooklogen.firebaseio.com",
-  storageBucket: "project-8907647471000011657.appspot.com",
-  messagingSenderId: "399611193314"
+apiKey: "AIzaSyCuhcID8gtRwWtzUpz0DbmhELdbxjdT0aM",
+    authDomain: "marathonzerolevel.firebaseapp.com",
+    databaseURL: "https://marathonzerolevel.firebaseio.com",
+    storageBucket: "marathonzerolevel.appspot.com",
+    messagingSenderId: "899901872944"
 };
 
 // for routing
@@ -26,6 +28,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponentComponent },
   { path: 'signup', component: SignupComponentComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'user', component: UserComponent },
   { path: '**', component: LoginComponentComponent } // for redirect
 ];
 
@@ -34,7 +37,9 @@ const routes: Routes = [
     AppComponent,
     LoginComponentComponent,
     SignupComponentComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent,
+    UserGetResumeComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

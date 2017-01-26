@@ -37,7 +37,7 @@ export class SignupComponentComponent implements OnInit {
     ngOnInit() {
     }
 
-    signUp(value: any) {        
+    signUp(value: any):void {        
         this.af.auth.createUser({ email: value.Email, password: value.Password })
             .catch((error: any) => {
                 console.log(error);

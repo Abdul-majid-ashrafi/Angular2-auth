@@ -24,7 +24,7 @@
 <option value="Female">Female</option>
 </select>
 
-    <label *ngIf="myForm.controls['AccountType'].value !== userType.Student">
+    <label *ngIf="myForm.controls['AccountType'].value == userType.Compony">
         <input placeholder="Company" type="text"  [formControl]="myForm.controls['Company']">
     </label>
     <button (click)="signUp(myForm.value)">Submit</button>

@@ -1,4 +1,4 @@
-<h1>Create Jobs</h1>
+<!--<h1>Create Jobs</h1>
 
 <form action="" [formGroup]="myForm">
 
@@ -12,4 +12,33 @@
     <input type="text" placeholder="Salary" type="text" [formControl]="myForm.controls['Salary']" id="salry" /><br>
 
     <button (click)="submited(myForm.value)">Submit</button>
-</form>
+</form>-->
+
+
+<div class="container">
+    <div class="page-header">
+        <h1>Create Jobs</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="col-sm-6 col-md-6">
+        <form action="" id="loginForm" [formGroup]="myForm">
+            <div class="form-group input-group">
+                <span class="input-group-addon"></span>
+                <input class="form-control" type="text" name='Job Title' [formControl]="myForm.controls['Title']" placeholder="Job Title" />
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"> </span>
+                <input class="form-control" type="text"  [formControl]="myForm.controls['Description']" name='Job Description' placeholder="Job Description" />
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"> </span>
+                <input class="form-control" type="text"  [formControl]="myForm.controls['Salary']" name='Job Salary' placeholder="Job Salary" />
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-info btn-block" (click)="submited(myForm.value)">Submit</button>
+            </div>
+
+        </form>
+    </div>
+</div>

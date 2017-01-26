@@ -1,10 +1,25 @@
-<h1>All Companeis</h1>
-<ul>
+
+
+<div class="container">
+  <div class="page-header">
+   <h1>All Companeis</h1>
+  </div>    
+</div>
+
+<!--<ul>
     <li *ngFor="let item of companiesArray">
         <b>FirstName: {{item.FirstName}}</b> <br/>
         <b>LastName: {{item.LastName}}</b> <br/>
         <b>Email: {{item.Email}}</b> <br/>
         <b>Company: {{item.Company}}</b>
           <button (click)="remove(item.$key)" *ngIf="keys === 'OozAO8KZ6ASLunY8aI5qt8nNYwW2'">Add</button>
+    </li>
+</ul>-->
+<ul class="list-group" style="width:350px;margin-left:20px">
+    <li class="list-group-item" *ngFor="let item of companiesArray">
+        <b class="list-group-item">Title: {{item.FirstName}} {{item.LastName}}</b>
+        <b class="list-group-item">Email: {{item.Email}}</b>
+        <b class="list-group-item">Company: {{item.Company}}</b>
+        <button type="button" (click)="remove(item.$key)" *ngIf="keys === 'OozAO8KZ6ASLunY8aI5qt8nNYwW2'" class="btn btn-link" >Remove</button>
     </li>
 </ul>

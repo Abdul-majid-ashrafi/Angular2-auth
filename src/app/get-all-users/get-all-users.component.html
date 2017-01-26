@@ -1,4 +1,10 @@
-<h1>All Students</h1>
+<div class="container">
+    <div class="page-header">
+        <h1>All Students</h1>
+    </div>
+</div>
+
+<!--<h1>All Students</h1>
 <ul>
     <li *ngFor="let item of userArray">
         <b>FirstName: {{item.FirstName}}</b> <br/>
@@ -6,5 +12,15 @@
         <b>Email: {{item.Email}}</b> <br/>
         <b>Gender: {{item.Gender}}</b>
                   <button (click)="remove(item.$key)" *ngIf="keys === 'OozAO8KZ6ASLunY8aI5qt8nNYwW2'">Add</button>
+    </li>
+</ul>
+-->
+<ul class="list-group" style="width:350px;">
+    <li class="list-group-item" *ngFor="let item of userArray" style="margin:20px;">
+        <b class="list-group-item">FirstName: {{item.FirstName}}</b>
+        <b class="list-group-item">LastName: {{item.LastName}}</b>
+        <b class="list-group-item">Email: {{item.Email}}</b>
+        <b class="list-group-item">Gender: {{item.Gender}}</b>
+        <button type="button" (click)="remove(item.$key)" *ngIf="keys === 'OozAO8KZ6ASLunY8aI5qt8nNYwW2'" class="btn btn-link">Remove</button>
     </li>
 </ul>

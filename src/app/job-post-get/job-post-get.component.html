@@ -1,12 +1,23 @@
-<h1>All Jobs</h1>
-<ol>
+<div class="container">
+    <div class="page-header">
+        <h1>All Jobs</h1>
+    </div>
+</div>
+
+<!--<ol>
     <li *ngFor="let item of allJobs"> 
         <b>Title: {{item.Title}}</b> <br/>
         <b>Descreption: {{item.Title}}</b> <br/>
         <b>Salary: {{item.Salary}}</b>
-
-<!--{{ (item | async )?.Title}}-->
   <button (click)="remove(item.$key)" *ngIf="keys === 'OozAO8KZ6ASLunY8aI5qt8nNYwW2'">Add</button>
     </li>
 </ol>
-
+-->
+<ul class="list-group" style="width:350px;">
+    <li class="list-group-item" *ngFor="let item of allJobs" style="margin:20px;">
+        <b class="list-group-item">Title: {{item.Title}}</b>
+        <b class="list-group-item">Descreption: {{item.Description}}</b>
+        <b class="list-group-item">Salary: {{item.Salary}}</b>
+        <button type="button" (click)="remove(item.$key)" *ngIf="keys === 'OozAO8KZ6ASLunY8aI5qt8nNYwW2'" class="btn btn-link">Remove</button>
+    </li>
+</ul>

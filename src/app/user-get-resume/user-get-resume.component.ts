@@ -7,11 +7,11 @@ import { MainServiceService } from '../main-service.service';
   styleUrls: ['./user-get-resume.component.css']
 })
 export class UserGetResumeComponent implements OnInit {
-userResume:any;
+userData:any;
 data: any
   constructor(private mainService: MainServiceService) { 
 
-this.userResume = mainService.userResume;
+this.userData = mainService.userData;
   }
 
   ngOnInit() {

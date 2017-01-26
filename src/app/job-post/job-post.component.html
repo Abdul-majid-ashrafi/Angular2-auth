@@ -1,0 +1,17 @@
+<p>
+  job-post works!
+</p>
+
+<form action="" [formGroup]="myForm">
+
+    <label for="name">Job Title</label>
+    <input type="text" placeholder="Title" [formControl]="myForm.controls['Title']" id="name" /><br>
+
+    <label for="des">Job Description</label>
+    <input type="text" placeholder="Job Description" [formControl]="myForm.controls['Description']" id="des" /><br>
+
+    <label for="salry">Salary</label>
+    <input type="text" placeholder="Salary" type="text" [formControl]="myForm.controls['Salary']" id="salry" /><br>
+
+    <button (click)="submited(myForm.value)">Submit</button>
+</form>

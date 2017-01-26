@@ -1,11 +1,17 @@
-<p>
-  user-get-resume works!
-</p>
-<h1>{{ (userResume | async )?.Address}}</h1>
-<p>{{ (userResume | async )?.Address}}</p>
-<p>{{ (userResume | async )?.Age}}</p>
-<p>{{ (userResume | async )?.DOB}}</p>
-<p>{{ (userResume | async )?.Education}}</p>
-<p>{{ (userResume | async )?.FatherName}}</p>
-<p>{{ (userResume | async )?.Name}}</p>
-<p>{{ (userResume | async )?.Phone}}</p>
+<h1>
+  Your resume updated :)
+</h1>
+<h1>{{ (userData | async )?.Address}}</h1>
+<p>{{ (userData | async )?.Address}}</p>
+<p>{{ (userData | async )?.Age}}</p>
+<p>{{ (userData | async )?.DOB}}</p>
+<p>{{ (userData | async )?.Education}}</p>
+<p>{{ (userData | async )?.FatherName}}</p>
+<p>{{ (userData | async )?.Name}}</p>
+<p>{{ (userData | async )?.Phone}}</p>
+
+<br>
+<br>
+<h4>
+<a routerLink="/home" routerLinkActive="active">Back home</a>
+</h4>

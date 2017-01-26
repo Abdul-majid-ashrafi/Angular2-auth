@@ -1,6 +1,21 @@
-<h1> Welcome: {{name}}</h1>
-<button (click)="logOut($event)">logOut</button>
+<h1> Welcome: {{obj.name}}</h1>
+<h5>{{obj.mail}}</h5>
+<button (click)="logOut()">logOut</button>
 <br/>
+<ul>
+    <!--<li *ngFor="let item of (items | async)?.Email">{{item  | async}}</li>-->
+</ul>
+<!--{{UserType.Company}}-->
+<div *ngIf="obj.type === 'Student'" >
 <a routerLink="/add/resume" routerLinkActive="active">User add data</a>
 <br/>
 <a routerLink="/get/resume" routerLinkActive="active">User Get Resume</a>
+</div>
+
+<div *ngIf="obj.type === 'Compony'" >
+<a routerLink="/company/job" routerLinkActive="active"> Add Job</a>
+<br/>
+<a routerLink="/get/job" routerLinkActive="active">Show Job</a>
+<br/>
+<a routerLink="/all_Users" routerLinkActive="active">Show all students</a>
+</div>

@@ -12,6 +12,9 @@ import { SignupComponentComponent } from './signup-component/signup-component.co
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { UserGetResumeComponent } from './user-get-resume/user-get-resume.component';
+import { JobPostComponent } from './job-post/job-post.component';
+import { JobPostGetComponent } from './job-post-get/job-post-get.component';
+import { GetAllUsersComponent } from './get-all-users/get-all-users.component';
 
 
 // Must export the config for firebase
@@ -30,6 +33,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'add/resume', component: UserComponent },
   { path: 'get/resume', component: UserGetResumeComponent },
+  { path: 'company/job', component: JobPostComponent },
+  { path: 'get/job', component: JobPostGetComponent },
+  { path: 'all_Users', component: GetAllUsersComponent },
   { path: '**', component: LoginComponentComponent } // for redirect
 ];
 
@@ -40,7 +46,10 @@ const routes: Routes = [
     SignupComponentComponent,
     HomeComponent,
     UserComponent,
-    UserGetResumeComponent
+    UserGetResumeComponent,
+    JobPostComponent,
+    JobPostGetComponent,
+    GetAllUsersComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

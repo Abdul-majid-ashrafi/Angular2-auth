@@ -5,30 +5,34 @@ import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 
 @Injectable()
 export class MainServiceService {
 userData:any;
-userResume: any;
+jobData:any;
 userProfile: any;
+allUsers: any;
   constructor(private af : AngularFire) {
-      // For Resume
-         this.userResume = af.database.object('/userPost/' + localStorage.getItem("key"));
-        //  this.userResume.subscribe(item => {
-        //      this.getResume = item;
-        //     // export const getResume =   item
-
-        //      console.log("User Get DaTA ",item)})
-    // For user Profile
+            //   For Resume get
+        //  this.userResume = af.database.object('/userPost/' + localStorage.getItem("key"));
+            // For Profile
             this.userProfile = af.database.object('/users/' + localStorage.getItem("key"));
-            this.userProfile.subscribe(item => {console.log("User Get Profile ",item)})
-  // For add data on firebase
+            // For Resume
             this.userData =  this.af.database.object('/userPost/' + localStorage.getItem("key"))
+            // For jobs
+            this.jobData =  this.af.database.list('/jobPost');
+            // For allUsers
+            this.allUsers =  this.af.database.list('/users')
    }
 
 
 
 
+jobPost(value: any) {
+value.company = localStorage.getItem("key")
+    this.jobData.push(value);
+  }
+
+
 addUserData(value: any) {
-    console.log("Inside Service: ", value )
     this.userData.set(value);
-            console.log(localStorage.getItem("key"))
+     console.log(localStorage.getItem("key"))
 
   }
 

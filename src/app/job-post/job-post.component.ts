@@ -4,31 +4,30 @@ import { MainServiceService } from '../main-service.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  selector: 'app-job-post',
+  templateUrl: './job-post.component.html',
+  styleUrls: ['./job-post.component.css']
 })
-export class UserComponent implements OnInit {
-    myForm: FormGroup;
+export class JobPostComponent implements OnInit {
+  myForm: FormGroup;
 
   constructor(private mainService: MainServiceService,  private fb : FormBuilder, public router: Router) { 
 
        this.myForm = fb.group({
-            'Name': [''],
-            'FatherName': [''],
-            'Education': [''],
-            'Address': [''],
-            'Age': [''],
-            'DOB': [''],
-            'Phone': [''],
+            'Title': [''],
+            'Description': [''],
+            'Salary': ['']
         });
   }
 
   ngOnInit() {
   }
 
+
 submited(value: any): void {
-    this.mainService.addUserData(value);
-    this.router.navigate(['/get/resume']);
+    this.mainService.jobPost(value);
+    // this.router.navigate(['/home']);
+
   }
+
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainServiceService } from '../main-service.service';
+import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 
 
 @Component({
@@ -8,18 +9,22 @@ import { MainServiceService } from '../main-service.service';
   styleUrls: ['./job-post-get.component.css']
 })
 export class JobPostGetComponent implements OnInit {
-getJob : any;
-data : any
-  constructor(private mainService: MainServiceService) { 
-
-      this.getJob = mainService.jobData;
-      this.getJob.subscribe(item => {
-          this.data = item
+    allJobs : any;
+    jobData:any;
+    keys: any;
+  constructor(private mainService: MainServiceService,private af : AngularFire) { 
+    this.keys = localStorage.getItem('key')
+          this.jobData = mainService.jobData;
+          this.jobData.subscribe(item => {
+          this.allJobs = item
+          console.log(this.keys)
       })
 
   }
-
   ngOnInit() {
   }
 
+remove(key:any){
+    this.jobData.remove(key)
+}
 }

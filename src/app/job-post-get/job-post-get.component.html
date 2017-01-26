@@ -1,10 +1,12 @@
+<h1>All Jobs</h1>
 <ol>
-    <li *ngFor="let item of data"> 
+    <li *ngFor="let item of allJobs"> 
         <b>Title: {{item.Title}}</b> <br/>
         <b>Descreption: {{item.Title}}</b> <br/>
         <b>Salary: {{item.Salary}}</b>
-        
-<!--{{ (item | async )?.Title}}-->
 
+<!--{{ (item | async )?.Title}}-->
+  <button (click)="remove(item.$key)" *ngIf="keys === 'OozAO8KZ6ASLunY8aI5qt8nNYwW2'">Add</button>
     </li>
 </ol>
+

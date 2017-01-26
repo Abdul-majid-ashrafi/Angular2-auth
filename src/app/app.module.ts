@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'add/resume', component: UserComponent },
   { path: 'get/resume', component: UserGetResumeComponent },
-  { path: 'company/job', component: JobPostComponent },
+  { path: 'create/job', component: JobPostComponent },
   { path: 'get/job', component: JobPostGetComponent },
   { path: 'all_Users', component: GetAllUsersComponent },
   { path: 'all/companeis', component: GetAllCompaneisComponent },

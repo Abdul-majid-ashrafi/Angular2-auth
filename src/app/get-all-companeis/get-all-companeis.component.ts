@@ -9,7 +9,9 @@ import { MainServiceService } from '../main-service.service';
 })
 export class GetAllCompaneisComponent implements OnInit {
  companiesArray : any
+ keys: any
   constructor(private mainService: MainServiceService) { 
+    this.keys = localStorage.getItem('key')
 
      this.companiesArray = []
      let allUsers = mainService.allUsers;

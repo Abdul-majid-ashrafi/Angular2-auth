@@ -10,7 +10,11 @@ userProfile: any;
   constructor(private af : AngularFire) {
       // For Resume
          this.userResume = af.database.object('/userPost/' + localStorage.getItem("key"));
-         this.userResume.subscribe(item => {console.log("User Get DaTA ",item)})
+        //  this.userResume.subscribe(item => {
+        //      this.getResume = item;
+        //     // export const getResume =   item
+
+        //      console.log("User Get DaTA ",item)})
     // For user Profile
             this.userProfile = af.database.object('/users/' + localStorage.getItem("key"));
             this.userProfile.subscribe(item => {console.log("User Get Profile ",item)})

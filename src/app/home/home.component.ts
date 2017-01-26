@@ -19,8 +19,6 @@ export class HomeComponent implements OnInit {
     this.name = item.FirstName + " " + item.LastName;
       console.log(item)
     })
-    // this.af.auth.subscribe(auth => console.log("auth",auth));
-
   }
 
   ngOnInit() {

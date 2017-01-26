@@ -28,7 +28,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponentComponent },
   { path: 'signup', component: SignupComponentComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'add/resume', component: UserComponent },
+  { path: 'get/resume', component: UserGetResumeComponent },
   { path: '**', component: LoginComponentComponent } // for redirect
 ];
 

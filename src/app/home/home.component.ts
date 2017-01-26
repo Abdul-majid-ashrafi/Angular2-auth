@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
 
   logOut() {
     this.af.auth.logout();
+    localStorage.removeItem("key")
     this.router.navigate(['/login']);
 
   }

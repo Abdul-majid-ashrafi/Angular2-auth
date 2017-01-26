@@ -1,7 +1,7 @@
 <h1>Login page</h1>
 
 
-<form action="">
+<form>
 
     <label for="email">Email</label>
     <input type="text" (input)="data.email=$event.target.value" id="email" /><br>
@@ -12,8 +12,6 @@
     <button (click)="login()">Login</button>
 
 </form>
-<button (click)="loginFacebook()">login Facebook</button>
-<button (click)="loginGoogle()">login Google</button>
 
 
 <a routerLink="/signup" routerLinkActive="active">Signup</a>

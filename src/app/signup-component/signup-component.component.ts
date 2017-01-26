@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable, AuthProviders, AuthMethods } from 'angularfire2';
 import { Router } from '@angular/router';
-import { UserObservable } from '../user-observable';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
+export const UserType = {
+    Company: "Company",
+    Student: "Student"
+}
 
 @Component({
     selector: 'app-signup-component',
@@ -10,33 +14,40 @@ import { UserObservable } from '../user-observable';
     styleUrls: ['./signup-component.component.css']
 })
 export class SignupComponentComponent implements OnInit {
+    myForm: FormGroup;
+    userType = UserType;
 
-    public UserOb: FirebaseListObservable<UserObservable>;
+    constructor(public af: AngularFire, public router: Router, private fb: FormBuilder) {
 
-    // items: FirebaseListObservable<UserObservable>;
-    data: any = {
-        email: ""
-    }
-    constructor(public af: AngularFire, public router: Router) {
+        this.myForm = fb.group({
+            'FirstName': [''],
+            'LastName': [''],
+            'Email': [''],
+            'Gender': [''],
+            'Password': [''],
+            // 'Student': [''],
+            'AccountType': [''],
+            'Company': [''],
+        });
         // this.items = af.database.list('/users');
         // this.items.subscribe(item => {console.log(item)})
         // this.af.auth.subscribe(auth => console.log("auth",auth));
-
     }
 
     ngOnInit() {
     }
 
-    signUp() {
-        this.af.auth.createUser({ email: this.data.email, password: this.data.pass })
+    signUp(value: any) {        
+        this.af.auth.createUser({ email: value.Email, password: value.Password })
             .catch((error: any) => {
                 console.log(error);
             })
             .then((users: any) => {
-                this.af.database.object('/users/' + users.uid).set(this.data);
+                delete value.Password;
+                this.af.database.object('/users/' + users.uid).set(value);
+                localStorage.setItem("key",users.uid)
                 console.log(users);
                 this.router.navigate(['/home']);
-
             });
     }
 }

@@ -1,31 +1,33 @@
 <h1>Registeration area!</h1>
 
-<form action="">
+<form action="" [formGroup]="myForm">
 
     <label for="firstName">First Name</label>
-    <input type="text" (input)="data.firstName=$event.target.value" id="firstName" /><br>
+    <input type="text" placeholder="First Name" [formControl]="myForm.controls['FirstName']" id="firstName" /><br>
 
     <label for="lastName">Last Name</label>
-    <input type="text" (input)="data.lastName=$event.target.value" id="lastName" /><br>
-
-    <!--<label for="age">Age</label>
-    <input type="text" (input)="data.age=$event.target.value" id="age" /><br>-->
-    <!--
-    <label for="phone">Phone</label>
-    <input type="text" (input)="data.phone=$event.target.value" id="phone" /><br>-->
+    <input type="text" placeholder="Last Name" [formControl]="myForm.controls['LastName']" id="lastName" /><br>
 
     <label for="email">Email</label>
-    <input type="text" (input)="data.email=$event.target.value" id="email" /><br>
+    <input type="text" placeholder="Email" type="email" [formControl]="myForm.controls['Email']" id="email" /><br>
 
     <label for="pass">Password</label>
-    <input type="text" (input)="data.pass=$event.target.value" id="pass" /><br>
+    <input placeholder="Password" type="password" [formControl]="myForm.controls['Password']" id="pass" /><br>
 
- <select name="" id="" (input)="data.type=$event.target.value">
-<option value="user">User</option>
-<option value="compony">Compony</option>
+    <select placeholder="Account Type" name="accountType" [formControl]="myForm.controls['AccountType']">
+<option value="Student">Student</option>
+<option value="Compony">Compony</option>
 </select>
 
-    <button (click)="signUp()">Submit</button>
+    <select *ngIf="myForm.controls['AccountType'].value == userType.Student" [formControl]="myForm.controls['Gender']">
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+
+    <label *ngIf="myForm.controls['AccountType'].value !== userType.Student">
+        <input placeholder="Company" type="text"  [formControl]="myForm.controls['Company']">
+    </label>
+    <button (click)="signUp(myForm.value)">Submit</button>
 </form>
 
 <a routerLink="/login" routerLinkActive="active">Login</a>

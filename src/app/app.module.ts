@@ -9,6 +9,7 @@ import { MainServiceService } from './main-service.service';
 import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { SignupComponentComponent } from './signup-component/signup-component.component';
+import { HomeComponent } from './home/home.component';
 
 
 // Must export the config for firebase
@@ -24,6 +25,7 @@ export const firebaseConfig = {
 const routes: Routes = [
   { path: 'login', component: LoginComponentComponent },
   { path: 'signup', component: SignupComponentComponent },
+  { path: 'home', component: HomeComponent },
   { path: '**', component: LoginComponentComponent } // for redirect
 ];
 
@@ -31,7 +33,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponentComponent,
-    SignupComponentComponent
+    SignupComponentComponent,
+    HomeComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

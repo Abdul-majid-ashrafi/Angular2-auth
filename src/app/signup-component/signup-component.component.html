@@ -8,17 +8,22 @@
     <label for="lastName">Last Name</label>
     <input type="text" (input)="data.lastName=$event.target.value" id="lastName" /><br>
 
-    <label for="age">Age</label>
-    <input type="text" (input)="data.age=$event.target.value" id="age" /><br>
-
+    <!--<label for="age">Age</label>
+    <input type="text" (input)="data.age=$event.target.value" id="age" /><br>-->
+    <!--
     <label for="phone">Phone</label>
-    <input type="text" (input)="data.phone=$event.target.value" id="phone" /><br>
+    <input type="text" (input)="data.phone=$event.target.value" id="phone" /><br>-->
 
     <label for="email">Email</label>
     <input type="text" (input)="data.email=$event.target.value" id="email" /><br>
 
     <label for="pass">Password</label>
     <input type="text" (input)="data.pass=$event.target.value" id="pass" /><br>
+
+ <select name="" id="" (input)="data.type=$event.target.value">
+<option value="user">User</option>
+<option value="compony">Compony</option>
+</select>
 
     <button (click)="signUp()">Submit</button>
 </form>

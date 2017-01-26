@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class MainServiceService {
 
   constructor() {
-      alert("Hello World")
+      // alert("Hello World")
    }
 
 }
